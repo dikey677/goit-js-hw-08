@@ -22,8 +22,8 @@ player.on(
   }, 1000),
 );
 
-let localeStrg = Number(localStorage.getItem('videoplayer-current-time') || 0);
-console.log(localeStrg);
+let localeStrg = Math.floor(localStorage.getItem('videoplayer-current-time') || 0);
+// console.log(localeStrg);
 
 player.setCurrentTime(localeStrg).then(function (seconds) {
   console.log(seconds);
