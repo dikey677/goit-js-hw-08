@@ -22,6 +22,9 @@ player.on(
   }, 1000),
 );
 
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time')).then(function (seconds) {
+let localeStrg = Number(localStorage.getItem('videoplayer-current-time') || 0);
+console.log(localeStrg);
+
+player.setCurrentTime(localeStrg).then(function (seconds) {
   console.log(seconds);
 });
