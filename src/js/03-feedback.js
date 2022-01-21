@@ -15,6 +15,9 @@ function onFormSubmit(e) {
   e.preventDefault();
   console.log('This form has been submitted');
   e.target.reset();
+
+  let getStorageObject = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  console.log(getStorageObject);
   localStorage.removeItem(STORAGE_KEY);
 }
 
