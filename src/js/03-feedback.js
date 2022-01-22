@@ -25,17 +25,17 @@ function onFormInput(e) {
   formData[e.target.name] = e.target.value;
 
   const JSONformData = JSON.stringify(formData);
-  console.log(JSONformData);
+  // console.log(JSONformData);
   localStorage.setItem(STORAGE_KEY, JSONformData);
 }
 
 function loadingPage() {
   const savedMsg = localStorage.getItem(STORAGE_KEY);
   if (savedMsg) {
-    console.log(savedMsg);
+    // console.log(savedMsg);
     const JSONsavedMsg = JSON.parse(savedMsg);
-    console.log(JSONsavedMsg);
-    textarea.value = JSONsavedMsg.message;
-    input.value = JSONsavedMsg.email;
+    // console.log(JSONsavedMsg);
+    textarea.value = JSONsavedMsg.message || '';
+    input.value = JSONsavedMsg.email || '';
   }
 }

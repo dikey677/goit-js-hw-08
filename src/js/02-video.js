@@ -4,14 +4,6 @@ import throttle from 'lodash.throttle';
 const iframe = document.querySelector('iframe');
 const player = new Vimeo.Player(iframe);
 
-// player.on('play', function () {
-//   console.log('played the video!');
-// });
-
-// player.getVideoTitle().then(function (title) {
-//   console.log('title:', title);
-// });
-
 player.on(
   'timeupdate',
   throttle(function (currentTime) {
@@ -23,7 +15,6 @@ player.on(
 );
 
 let localeStrg = Math.floor(localStorage.getItem('videoplayer-current-time') || 0);
-// console.log(localeStrg);
 
 player.setCurrentTime(localeStrg).then(function (seconds) {
   return seconds;
